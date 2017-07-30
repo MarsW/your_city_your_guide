@@ -2,9 +2,11 @@
     // POI
     var points = [];
     // Start at the page load
+    
     $(document).ready(function(){
         // getLocation();
         trackKeyDown();
+        cal_all_distance();
         // keep doing
         setInterval(function(){ 
             check_nearby();
@@ -19,24 +21,42 @@
             if (e.keyCode==49){      //101 
                 $("#lat").val("25.0339031");
                 $("#lon").val("121.5623212");
+                cal_all_distance();
             }else if (e.keyCode==76){ //L 龍山寺 
                 $("#lat").val("25.0371623");
                 $("#lon").val("121.497712");
+                cal_all_distance();
             }else if (e.keyCode==75){ //"K"aohsiung 大樹舊鐵橋
                 $("#lat").val("22.6623093");
                 $("#lon").val("120.4248003");
+                cal_all_distance();
             }else if (e.keyCode==84){ //"T"aitung 史前博物館
                 $("#lat").val("22.7604012");
                 $("#lon").val("121.0889871");
+                cal_all_distance();
             }else if (e.keyCode==89){ //"Y"ilan 烏石港
                 $("#lat").val("24.8735015");
                 $("#lon").val("121.8371593");
+                cal_all_distance();
             }else if (e.keyCode==66){ //"B"igBen 大笨鐘
                 $("#lat").val("51.5007292");
                 $("#lon").val("-0.1268141");
+                cal_all_distance();
             }
+
         };
     }
+    function cal_all_distance(){
+        $(".scene_distance").each(function(){
+            lat1 = $("#lat").val();
+            lon1 = $("#lon").val();
+            lat2 = $(this).attr("lat");
+            lon2 = $(this).attr("lon");
+            scene_distance = getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2);
+            $(this).text("Distance: "+ scene_distance.toFixed(2) +" km");
+        });
+    }
+        
     function check_nearby(){
         if ($("#lat").val() && $("#lon").val()){
             // console.log("refresh");

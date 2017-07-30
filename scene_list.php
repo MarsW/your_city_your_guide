@@ -34,6 +34,9 @@
             $name = $row['name_zh']."<br>";
             $url = "scene.php?lang=zh&sn=".$row['sn'];
         }
+        $tmp = explode(",", $row['gps']); 
+        $lat = $tmp[0];
+        $lon = $tmp[1];
 
         $row_html.='
                     <div class="col-md-4 col-sm-6 portfolio-item">
@@ -47,6 +50,7 @@
                         </a>
                         <div class="portfolio-caption">
                             <h4>'.$name.'</h4>
+                            <p class="text-muted scene_distance" lat="'.$lat.'" lon="'.$lon.'">Distance:  km</p>
                         </div>
                     </div>
         ';
@@ -94,8 +98,8 @@
                         <div class="col-lg-12 text-center">
                             <h2 class="section-heading">'.$title.'</h2>
                             <p id="alert" class="text-muted"></p>
-                            <input id="lat" value="" style="display:none"><br>
-                            <input id="lon" value="" style="display:none"><br>
+                            <input id="lat" value="25.0453549" style="display:none"><br>
+                            <input id="lon" value="121.5289202" style="display:none"><br>
                             <div id="googleMap" style="display:none"></div>
                         </div>
                     </div>

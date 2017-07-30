@@ -15,6 +15,7 @@
         <link href="css/css(3)" rel="stylesheet" type="text/css">
         <!-- Theme CSS -->
         <link href="css/agency.min.css" rel="stylesheet">
+        <link rel="icon" href="img/favicon.png">
         <!-- jQuery -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     </head>
@@ -30,7 +31,7 @@
                             <span class="sr-only">Toggle navigation</span> Menu <span class="glyphicon glyphicon-align-justify"></span>
                             </button>
 
-                            <a class="navbar-brand page-scroll" href="index.html" style="font-family: "Roboto Slab", serif; color:#fff;">Your City Your Guide</a>
+                            <a class="navbar-brand page-scroll" href="index.html" style="font-family: "Roboto Slab", serif; color:#fff;">Your City Your Guide</a><img src="img/logo.png" width="80em"/>
                     </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
